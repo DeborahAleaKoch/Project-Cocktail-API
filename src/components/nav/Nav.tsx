@@ -1,4 +1,4 @@
-const Nav = () => {
+const NavBar = () => {
 	return (
 		<nav className='flex justify-between'>
 			<p>Drinks&Chill</p>
@@ -7,4 +7,4 @@ const Nav = () => {
 	);
 };
 
-export default Nav;
+export default NavBar;

@@ -5,15 +5,17 @@ import { CardItem } from "../../components/cardItem/CardItem";
 
 const CardList = () => {
 	const { linkParam } = useParams();
-	console.log(linkParam);
+	// console.log(linkParam);
 
 	const { drinks, setLink } = useContext(mainContext) as any;
 
-	console.log(drinks);
+	// console.log(drinks);
 
 	useEffect(() => {
 		setLink(linkParam);
 	}, [linkParam]);
+
+	console.log("drinks:", drinks);
 
 	return (
 		<>
@@ -21,7 +23,8 @@ const CardList = () => {
 				<h2 className='text-center text-5xl bg-slate-400'>
 					{linkParam?.toUpperCase()}
 				</h2>
-				<div className='grid md:grid-cols-2'>
+
+				<div className='grid md:grid-cols-2 bg-slate-100'>
 					{drinks.map((drink: any) => {
 						return (
 							<div key={drink.idDrink}>

@@ -30,14 +30,14 @@ export function MainProvider({ children }: { children: React.ReactNode }) {
 						"https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic";
 				} else if (link === "zufall") {
 					url = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+				} else {
+					url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${link}`;
 				}
 				try {
 					const response = await axios.get(url);
 					console.log("response", response);
 
-					if (response.data.drinks) {
-						setDrinks(response.data.drinks);
-					}
+					setDrinks(response.data.drinks);
 				} catch (error) {
 					console.error(error, "hier ist was schief gelaufen");
 				}

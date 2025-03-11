@@ -1,34 +1,36 @@
-import React, { useRef } from "react";
+import { useState } from "react";
+
+import { Link } from "react-router-dom";
 
 const InputForm = () => {
-	const inputValueRef = useRef<HTMLInputElement>(null);
+	// const inputValueRef = useRef<HTMLInputElement>(null);
+	const [searchValue, setSearchValue] = useState<string>("");
 
 	//hier kommt noch useContext hin
 
-	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
+	// const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+	// 	event.preventDefault();
 
-		const input = inputValueRef.current?.value || "";
+	// 	const input = inputValueRef.current?.value || "";
 
-		// setSearchValue({}) - hier noch funktion
-	};
+	// 	// setSearchValue({}) - hier noch funktion
+	// };
 
 	return (
-		<>
-			<form onSubmit={handleSubmit} className='flex gap-2'>
-				<input
-					type='text'
-					placeholder='type something'
-					className='bg-slate-200 text-black px-3 py-2 rounded-xl'
-				/>
-				<button
-					type='submit'
-					className='bg-blue-500 px-4 py-2 rounded-xl text-black'
-				>
+		<div className='px-5 '>
+			<input
+				type='text'
+				placeholder='type something'
+				className='bg-slate-200 text-black px-3 py-2 rounded-xl'
+				value={searchValue}
+				onChange={(event) => setSearchValue(event.target.value)}
+			/>
+			<Link to={`/${searchValue}`} className=''>
+				<button className='cursor-pointer hover:bg-pink-400 hover:ease-in-out bg-blue-500 px-6 py-2 rounded-xl text-black'>
 					Search
 				</button>
-			</form>
-		</>
+			</Link>
+		</div>
 	);
 };
 

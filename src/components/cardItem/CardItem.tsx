@@ -3,12 +3,6 @@ interface CardItemProps {
 	link: string;
 }
 
-// interface CardItem {
-// 	strDrink: string;
-// 	strDrinkThumb: string;
-// 	idDrink: string;
-// }
-
 export const CardItem = ({ drink, link }: CardItemProps) => {
 	const getColor = () => {
 		switch (link) {

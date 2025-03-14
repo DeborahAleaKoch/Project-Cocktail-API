@@ -1,20 +1,8 @@
 import { useState } from "react";
-
 import { Link } from "react-router-dom";
 
 const InputForm = () => {
-	// const inputValueRef = useRef<HTMLInputElement>(null);
 	const [searchValue, setSearchValue] = useState<string>("");
-
-	//hier kommt noch useContext hin
-
-	// const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-	// 	event.preventDefault();
-
-	// 	const input = inputValueRef.current?.value || "";
-
-	// 	// setSearchValue({}) - hier noch funktion
-	// };
 
 	return (
 		<div className='px-5 '>

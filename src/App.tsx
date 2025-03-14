@@ -15,7 +15,7 @@ function App() {
 			<Route path='/' element={<Layout />}>
 				<Route index element={<Home />} />
 				<Route path='/:linkParam' element={<CardList />} />
-				<Route path='*' element={<NotFound />} />
+				<Route path='/*' element={<NotFound />} />
 			</Route>
 		)
 	);
